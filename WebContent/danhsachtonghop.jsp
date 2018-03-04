@@ -20,13 +20,17 @@
 				ArrayList<TongHop> danhSachTongHop = (ArrayList<TongHop>) request.getAttribute("danhSachTongHop");
 			%>
 			<div id="table-may">
+			<form action="DanhSachTongHopServlet" method="POST">
+			
 				<table>
 					<h1>Danh sách tổng hợp</h1>
 					<h4>
 						<a href="createnewcustomers.jsp">Chức năng cập nhật</a>
 					</h4>
 					<span>Tìm kiếm</span>
-					<input type="text" placeholder="Search..">
+					<input name="maTimKiem" type="text" placeholder="Search..">
+					<button type="submit">Tìm kiếm</button>
+			</form>
 					<tr>
 						<th>Mã khách hàng</th>
 						<th>Tên khách hàng</th>
@@ -42,10 +46,11 @@
 						<th>Số lương</th>
 						<th>Tổng tiền</th>
 						<th>Chức năng</th>
-					</tr>
+					</tr>				
 					<%
 						for(TongHop tongHop : danhSachTongHop){
 					%>
+					</tr>
 					<tr>
 						<td><%=tongHop.getMaKhachHang()%></td>
 						<td><%=tongHop.getTenKhachHang()%></td>

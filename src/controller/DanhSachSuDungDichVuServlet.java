@@ -10,20 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.bean.TongHop;
-import model.bo.TongHopBO;
+import model.bean.SuDungDichVu;
+import model.bo.SuDungDichVuBO;
 
 /**
- * Servlet implementation class DanhSachTongHopServlet
+ * Servlet implementation class DanhSachSuDungDichVuServlet
  */
-@WebServlet("/DanhSachTongHopServlet")
-public class DanhSachTongHopServlet extends HttpServlet {
+@WebServlet("/DanhSachSuDungDichVuServlet")
+public class DanhSachSuDungDichVuServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DanhSachTongHopServlet() {
+    public DanhSachSuDungDichVuServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,22 +39,14 @@ public class DanhSachTongHopServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		TongHopBO tongHopBO = new TongHopBO();
+		SuDungDichVuBO suDungDichVuBO = new SuDungDichVuBO();
+		// lay danh sach su dung dich vu:
+		ArrayList<SuDungDichVu> danhSachSuDungDichVu = suDungDichVuBO.layDuLieuBangSuDungDichVu();
+		request.setAttribute("danhSachSuDungDichVu", danhSachSuDungDichVu);
 		
-		// lay danh sach tong hop:
-		ArrayList<TongHop> danhSachTongHop =null ;
-		
-		String maTimKiem = request.getParameter("maTimKiem");
-		if(maTimKiem == null || maTimKiem.length() ==0){
-			danhSachTongHop= tongHopBO.layDanhSachTongHop();
-		}else{
-			danhSachTongHop=tongHopBO.layDanhSachTimKiem(maTimKiem);
-		}
-		request.setAttribute("danhSachTongHop", danhSachTongHop);
 		
 		// finally:
-		RequestDispatcher rd = request.getRequestDispatcher("danhsachtonghop.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("danhsachsudungdichvu.jsp");
 		rd.forward(request, response);
 	}
 

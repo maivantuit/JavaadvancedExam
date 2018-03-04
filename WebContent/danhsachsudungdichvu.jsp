@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Danh sách sử dụng máy</title>
+<title>Danh sách sử dụng dịch vụ</title>
 <link href="css/mos-style.css" rel='stylesheet' type='text/css' />
 <!--../ ; ./: dai dien cho ky tu cung hang  -->
 </head>
@@ -18,11 +18,11 @@
 		<jsp:include page="menu.jsp"></jsp:include>
 		<div id="rightContent">
 			<%
-				ArrayList<SuDungMay> danhSachSuDungMay = (ArrayList<SuDungMay>) request.getAttribute("danhSachSuDungMay");
+				ArrayList<SuDungDichVu> danhSachSuDungDichVu = (ArrayList<SuDungDichVu>) request.getAttribute("danhSachSuDungDichVu");
 			%>
 			<div id="table-may">
 				<table>
-					<h1>Danh sách sử dụng máy</h1>
+					<h1>Danh sách sử dụng dịch vụ</h1>
 					<h4>
 						<a href="createnewcustomers.jsp">Chức năng cập nhật</a>
 					</h4>
@@ -30,23 +30,23 @@
 					<input type="text" placeholder="Search..">
 					<tr>
 						<th>Mã khách hàng</th>
-						<th>Mã máy</th>
-						<th>Ngày bắt đầu sử dụng</th>
-						<th>Giờ bắt đầu sử dụng</th>
-						<th>Thời gian sử dụng</th>
+						<th>Mã dịch vụ</th>
+						<th>Ngày sử dụng</th>
+						<th>Giờ  sử dụng</th>
+						<th>Số lượng</th>
 						<th>Chức năng</th>
 					</tr>
 					<%
-						for(SuDungMay suDungMay : danhSachSuDungMay){
+						for(SuDungDichVu suDungDichVu : danhSachSuDungDichVu){
 					%>
 					<tr>
-						<td><%=suDungMay.getMaKhachHang()%></td>
-						<td><%=suDungMay.getMaMay()%></td>
-						<td><%=suDungMay.getNgayBatDauSuDung()%></td>
-						<td><%=suDungMay.getGioBatDauSuDung()%></td>
-						<td><%=suDungMay.getThoiGianSuDung()%></td>
+						<td><%=suDungDichVu.getMaKhachHang()%></td>
+						<td><%=suDungDichVu.getMaDichVu()%></td>
+						<td><%=suDungDichVu.getNgaySuDung()%></td>
+						<td><%=suDungDichVu.getGioSuDung()%></td>
+						<td><%=suDungDichVu.getSoLuong()%></td>
 						<td><a
-							href="SuDungDichVuServlet?maKhachHangURL=<%=suDungMay.getMaKhachHang()%>">Thêm dịch vụ</a>							
+							href="SuDungDichVuServlet?maKhachHangURL=<%=suDungDichVu.getMaKhachHang()%>">Cập nhật</a>							
 					</tr>
 					<%
 						}

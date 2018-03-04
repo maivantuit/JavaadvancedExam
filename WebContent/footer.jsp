@@ -13,7 +13,7 @@
     </head>
     <body>
         <div id="footer">
-            &copy; 2017 Website | <a href="#">BẤT ĐỘNG SẢN</a> | Design <a href="https://github.com/maivantuit" rel="nofollow" target="_blank"></a><br>            
+            &copy; 2017 Website | <a href="#">JAVA ADVANCED</a> | Design Mai Văn Tú<a href="https://github.com/maivantuit" rel="nofollow" target="_blank"></a><br>            
         </div>
     </body>
 </html>

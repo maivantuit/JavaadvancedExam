@@ -18,7 +18,8 @@
                 <li><a href="index.jsp">Trang chủ</a></li>                
                 <li><a href="DangKySuDungMayServlet">Đăng ký sử dụng máy</a></li>
                 <li><a href="DanhSachSuDungMayServlet">Danh sách sử dụng máy</a></li>
-                <li><a href="DanhSachTongHopServlet">Liệt kê thông tin và tìm kiếm</a></li>
+                <li><a href="DanhSachSuDungDichVuServlet">Danh sách sử dụng dịch vụ</a></li>
+                <li><a href="DanhSachTongHopServlet">Tổng hợp và tìm kiếm</a></li>
                <li>
                 	<a href="manager_hoadonbanhang.jsp">Quản lý bài đăng</a>
                 	<ul class="sub-menu2">                	
